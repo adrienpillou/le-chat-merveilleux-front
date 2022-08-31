@@ -1,0 +1,43 @@
+.sidenav{
+    height: 100%;
+    background-color: #424242;
+    margin: 0;
+    left: 0;
+    width: 15%;
+    position: fixed;
+    text-align: center;
+    color: white;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.571);
+    display: inline;
+}
+
+.sidenav-mask{
+    background-color: rgb(255, 0, 0);
+    position: relative;
+    width:300px;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.sidenav button{
+    width: 100%;
+}
+
+.sidenav h1{
+    margin:16px 16px;
+    color: cornsilk;
+    font-weight: 500;
+}

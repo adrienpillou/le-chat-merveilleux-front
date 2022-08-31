@@ -12,6 +12,7 @@ import { ChatBoxComponent } from './chat-box/chat-box.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { ChatInputComponent } from './chat-input/chat-input.component';
 import { HomeComponent } from './home/home.component';
+import { ChatSidenavComponent } from './chat-sidenav/chat-sidenav.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     ChatBoxComponent,
     ChatMessageComponent,
     ChatInputComponent,
-    HomeComponent
+    HomeComponent,
+    ChatSidenavComponent
   ],
   imports: [
     BrowserModule,
