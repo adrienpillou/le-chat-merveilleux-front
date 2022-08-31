@@ -13,6 +13,8 @@ import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { ChatInputComponent } from './chat-input/chat-input.component';
 import { HomeComponent } from './home/home.component';
 import { ChatSidenavComponent } from './chat-sidenav/chat-sidenav.component';
+import { CalcToolComponent } from './calc-tool/calc-tool.component';
+import { SnakeGameComponent } from './snake-game/snake-game.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ChatSidenavComponent } from './chat-sidenav/chat-sidenav.component';
     ChatMessageComponent,
     ChatInputComponent,
     HomeComponent,
-    ChatSidenavComponent
+    ChatSidenavComponent,
+    CalcToolComponent,
+    SnakeGameComponent
   ],
   imports: [
     BrowserModule,
