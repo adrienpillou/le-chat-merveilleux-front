@@ -1,20 +1,20 @@
 <div class="container form-container">
     <h1>LeChatMerveilleux</h1>
     <mat-form-field>
-        <input #pseudo type="text" matInput placeholder="Pseudo"/>
+        <input type="text" matInput placeholder="Pseudo" [(ngModel)]="pseudo"/>
     </mat-form-field>
     <br/>
     <mat-form-field>
-        <input #identifiant type="email" matInput placeholder="Identifiant"/>
+        <input type="email" matInput placeholder="Identifiant" [(ngModel)]="id"/>
     </mat-form-field>
     <br/>
     <mat-form-field>
-        <input #motDePasse type="password" matInput placeholder="Mot de passe"/>
+        <input type="password" matInput placeholder="Mot de passe" [(ngModel)]="password"/>
     </mat-form-field>
     <br/>
     <mat-form-field>
-        <input #confirmerMotDePasse type="password" matInput placeholder="Confirmer"/>
+        <input type="password" matInput placeholder="Confirmer" [(ngModel)]="confirmPassword"/>
     </mat-form-field>
     <br/>
-    <button mat-raised-button color="primary" type="Submit">S'inscrire</button>
+    <button mat-raised-button color="primary" type="Submit" (click)="signInUsingForm()">S'inscrire</button>
 </div>

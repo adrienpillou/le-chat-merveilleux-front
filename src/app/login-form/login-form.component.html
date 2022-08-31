@@ -1,11 +1,12 @@
 <div class="container form-container">
     <h1>LeChatMerveilleux</h1>
     <mat-form-field>
-        <input #identifiant type="text" matInput placeholder="Identifiant"/>
+        <input type="text" matInput placeholder="Identifiant" [(ngModel)]="id"/>
     </mat-form-field>
     <mat-form-field>
-        <input #motDePasse type="text" matInput placeholder="Mot de passe"/>
+        <input type="password" matInput placeholder="Mot de passe" [(ngModel)]="password"/>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="Submit">S'identifier</button>
+    <button mat-raised-button color="primary" type="Submit" (click)="loginUsingForm()">S'identifier</button>
+    <button mat-raised-button color="disabled" type="Submit">S'inscrire</button>
 </div>
 

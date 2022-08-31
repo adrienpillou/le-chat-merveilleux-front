@@ -12,6 +12,10 @@ import { ChatBoxComponent } from './chat-box/chat-box.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { ChatInputComponent } from './chat-input/chat-input.component';
 import { HomeComponent } from './home/home.component';
+import { ChatSidenavComponent } from './chat-sidenav/chat-sidenav.component';
+import { CalcToolComponent } from './calc-tool/calc-tool.component';
+import { SnakeGameComponent } from './snake-game/snake-game.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,13 +27,18 @@ import { HomeComponent } from './home/home.component';
     ChatBoxComponent,
     ChatMessageComponent,
     ChatInputComponent,
-    HomeComponent
+    HomeComponent,
+    ChatSidenavComponent,
+    CalcToolComponent,
+    SnakeGameComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
