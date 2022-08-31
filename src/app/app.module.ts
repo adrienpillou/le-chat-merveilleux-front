@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { ChatSidenavComponent } from './chat-sidenav/chat-sidenav.component';
 import { CalcToolComponent } from './calc-tool/calc-tool.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,13 +30,15 @@ import { SnakeGameComponent } from './snake-game/snake-game.component';
     HomeComponent,
     ChatSidenavComponent,
     CalcToolComponent,
-    SnakeGameComponent
+    SnakeGameComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

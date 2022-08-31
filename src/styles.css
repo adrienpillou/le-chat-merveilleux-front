@@ -21,7 +21,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .form-container h1{
-    color: cornsilk;
+    color: white;
     font-size: 2em;
     font-weight: 500;
+}
+
+.form-container mat-form-field{
+    color: white;
 }

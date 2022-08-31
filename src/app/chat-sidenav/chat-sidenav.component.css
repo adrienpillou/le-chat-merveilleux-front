@@ -11,12 +11,6 @@
     display: inline;
 }
 
-.sidenav-mask{
-    background-color: rgb(255, 0, 0);
-    position: relative;
-    width:300px;
-}
-
 .visible{
     visibility: visible;
 }

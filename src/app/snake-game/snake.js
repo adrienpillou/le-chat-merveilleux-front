@@ -62,6 +62,7 @@ function loop() {
   if (snake.x < 0) {
     snake.x = canvas.width - grid;
   }
+  
   else if (snake.x >= canvas.width) {
     snake.x = 0;
   }

@@ -10,6 +10,7 @@ export class SnakeGameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
