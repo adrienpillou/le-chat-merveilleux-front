@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin-form.component.css']
 })
 export class SigninFormComponent implements OnInit {
+  pseudo:string = "";
+  id:string = "";
+  password:string = "";
+  confirmPassword:string = "";
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  signInUsingForm(){
+    console.log(this.pseudo, this.id, this.password, this.confirmPassword);
   }
 
 }
