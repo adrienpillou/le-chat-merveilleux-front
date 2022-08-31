@@ -1,0 +1,25 @@
+ul{
+    list-style: none;
+    font-size: 1em;
+}
+
+#options{
+    display: flex;
+    align-items: space-around;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#options button{
+    margin: 0px 6px;
+    font-weight: 300;
+}
+
+#sign-button{
+    background-color: #1D61EE;
+}
+
+#connect-button{
+    background-color:#424242;
+}
+

@@ -1,0 +1,12 @@
+.self{
+    float:right;
+    background-color:#1D61EE;
+}
+
+.other{
+    float:left;
+}
+
+.message-card{
+    width: 65%;
+}

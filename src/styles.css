@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; background-color: #303030;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.message-card{
+    margin-top: 16px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    /*border: 1px dashed greenyellow;*/
+    width: 600px;
+    align-items: center;
+    margin-top: 150px;
+    padding: 16px 0px;
+    border-radius: 5px;
+    background-color: #212121;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.571);
+}
+
+.form-container h1{
+    color: cornsilk;
+    font-size: 2em;
+    font-weight: 500;
+}
