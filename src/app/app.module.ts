@@ -16,6 +16,7 @@ import { ChatSidenavComponent } from './chat-sidenav/chat-sidenav.component';
 import { CalcToolComponent } from './calc-tool/calc-tool.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
