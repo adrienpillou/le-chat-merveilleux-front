@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Message } from '../interfaces/message';
 
 @Component({
   selector: 'app-chat-box',
@@ -7,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./chat-box.component.css']
 })
 export class ChatBoxComponent implements OnInit {
-  messages: any;
+  messages!: Message[];
 
   constructor(private http: HttpClient) { }
 
@@ -16,8 +17,9 @@ export class ChatBoxComponent implements OnInit {
   }
 
   getMessages(url:string){
-    this.messages = this.http.get(url);
-    console.log(this.messages);
+    this.http.get(url).subscribe(data => {
+      this.messages = data as Message[];
+    });
   }
 
 }

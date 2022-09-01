@@ -1,9 +1,10 @@
 <mat-toolbar>
-    <span id="logo">LeChatMerveilleux</span>
+    <span id="logo">{{title}}</span>
     <div id="options">
-        <button mat-button id="connect-button" routerLink="/home">Home</button>
-        <button mat-button id="connect-button" routerLink="/chattin">Salons</button>
+        <button mat-button id="pseudo-pill" disabled="true" color="disabled" >{{pseudo}}</button>
+        <button mat-button id="home-button" routerLink="/home">Home</button>
+        <button mat-button id="chat-button" routerLink="/chattin">Salons</button>
         <button mat-button id="connect-button" routerLink="/login">Connexion</button>
-        <button mat-button id="sign-button" routerLink="/signin">S'inscrire</button>
+        <!--<button mat-button id="sign-button" routerLink="/signin">S'inscrire</button>-->
     </div>
 </mat-toolbar>
