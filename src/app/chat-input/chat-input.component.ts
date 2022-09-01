@@ -20,6 +20,8 @@ export class ChatInputComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // Envoyer un message à l'API
   sendMessage(){
     let user!: User;
     let messageToSend!: Message;
