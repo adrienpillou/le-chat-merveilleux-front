@@ -2,6 +2,8 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { SessionService } from '../services/session.service';
+import { User } from '../models/user';
+import { API_BASE_URL, LOGIN_ROUTE, HOME_ROUTE} from 'src/globals';
 
 @Component({
   selector: 'app-login-form',
@@ -27,16 +29,20 @@ export class LoginFormComponent implements OnInit {
       return;
 
     // Authentifier en passant par l'API
-    let res: boolean;
+    let data: Object;
     this.http.post(
-      "http://localhost:7777/signin",
-      {login: this.login, password: this.password}).subscribe(r => {
-        res = r as boolean;
-        console.log(res);
+      API_BASE_URL + LOGIN_ROUTE,
+      {
+        login: this.login,
+        password: this.password
+      }
+      ).subscribe(r => {
+        console.log(r as User);// Données retournés par l'API 
+        
         // Supprimer la session courante
-        this.session.deleteUserSession();
-        this.session.createUserSession(this.login, this.login);
-        this.router.navigate(['/home']);
+        this.session.deleteSession();
+        this.session.createUserSession(r as User);
+        this.router.navigate([HOME_ROUTE]);
       }
     );
   }

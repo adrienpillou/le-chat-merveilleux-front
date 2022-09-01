@@ -1,40 +1,77 @@
 import { Injectable } from '@angular/core';
 import { Session } from '../interfaces/session';
+import { User } from '../models/user';
+/* Service de gestion de la session */
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class SessionService {
   public session!: Session;
 
   constructor() { }
 
-  // Créer une session à un utilisateur en utilisant le localstorage
-  createUserSession(login: string, pseudo: string) {
-    let currentSession = localStorage.getItem('session');
-    if (currentSession != null) {
-      console.warn("Une session est déjà en cours d'utilisation.");
-      return;
+  setPseudo(pseudo: string){
+    localStorage.setItem('pseudo', pseudo);
+  }
+
+  setLogin(login: string){
+    localStorage.setItem('login', login);
+  }
+
+  setUserId(id: number){
+    localStorage.setItem('userId', id.toString());
+  }
+
+  getPseudo(){
+    let pseudo:string | null;
+    pseudo = localStorage.getItem('pseudo');
+    if(pseudo == null){
+      return "";
     }
-
-    this.session.login = login;
-    this.session.pseudo = pseudo;
-    
-    localStorage.setItem('session', JSON.stringify(this.session as Object));
-    console.warn(`Session créée pour l'utilisateur ${pseudo}.`);
+    return pseudo;
   }
 
-  // Supprimer la session courante
-  deleteUserSession() {
-    this.session.pseudo = "";
-    this.session.login = "";
-    localStorage.removeItem('session');
-    console.warn('Session effacée.');
+  getLogin(){
+    let login:string | null;
+    login = localStorage.getItem('login');
+    if(login == null){
+      return "";
+    }
+    return login;
   }
 
-  // Récupérer la session en cours d'utilisation
-  getSession(): Session {
-    this.session = JSON.parse(localStorage.getItem('session') || "") as Session;
-    return this.session;
+  getUserId(){
+    return parseInt(localStorage.getItem('userId') || "");
+  }
+
+  deleteSession(){
+    localStorage.clear();
+    console.warn(`Session effacée`);
+  }
+
+  isUserConnected(): boolean{
+    if (this.getLogin() == ""){
+      return false;
+    }
+    return true;
+  }
+
+  getUserFromSession(){
+    let user: User = new User(
+      this.getUserId(),
+      this.getPseudo(),
+      this.getLogin(),
+      "*****"
+    );
+    return user;
+  }
+
+  createUserSession(user: User){
+    this.setLogin(user.login);
+    this.setPseudo(user.pseudo);
+    this.setUserId(user.id);
+    console.warn(`Session créée pour ${user.login}`);
   }
 }

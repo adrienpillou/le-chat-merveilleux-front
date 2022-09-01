@@ -1,6 +1,6 @@
 <div class="container chat-box">
     <div class="messages-container" *ngFor="let m of messages">
-        <app-chat-message [info] = m></app-chat-message>
+        <app-chat-message [message] = m></app-chat-message>
     </div>
     <app-chat-sidenav></app-chat-sidenav>
     <app-chat-input></app-chat-input>

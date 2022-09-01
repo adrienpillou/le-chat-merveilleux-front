@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Message } from '../interfaces/message';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-chat-message',
@@ -7,17 +8,21 @@ import { Message } from '../interfaces/message';
   styleUrls: ['./chat-message.component.css']
 })
 export class ChatMessageComponent implements OnInit {
-  @Input() public info!: Message;
+  @Input() public message!: Message;
 
-  constructor() { }
+  constructor(private session: SessionService) { }
 
   ngOnInit(): void {
-    console.log(this.info);
   }
 
-  // A compléter
-  isSelf():boolean{
-    return true;
+  // Retourne vrai si le message est envoyé par l'utilisateur de la session
+  isSelf(): boolean{
+    
+    let clientID: number;
+    clientID = this.session.getUserId();
+    if (this.message.user.id == 1){
+      return true;
+    }
+    return false;
   }
-
 }
