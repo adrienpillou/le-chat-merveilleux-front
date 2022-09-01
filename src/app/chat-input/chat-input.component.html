@@ -1,6 +1,6 @@
 <div class="chat-input">
-    <input #message id="field" type="text" placeholder="Message"/>
-    <button mat-fab color="primary" id="send-button">
+    <input id="field" type="text" placeholder="Message" [(ngModel)]="fieldValue"/>
+    <button mat-fab color="primary" id="send-button" (click)="sendMessage()">
         <mat-icon>send</mat-icon>
     </button>
 </div>
