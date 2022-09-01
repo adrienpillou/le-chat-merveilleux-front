@@ -25,11 +25,7 @@ x: 320,
 y: 320
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-    init();
-});
-
-function init(){
+function Init(){
     canvas = document.getElementById('game');
     context = canvas.getContext('2d');
     // start the game
@@ -47,12 +43,15 @@ function loop() {
   requestAnimationFrame(loop);
 
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
-  if (++count < 4) {
+  if (++count < 16) {
     return;
   }
 
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);
+  context.rect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = "white";
+  context.fill();
 
   // move snake by it's velocity
   snake.x += snake.dx;

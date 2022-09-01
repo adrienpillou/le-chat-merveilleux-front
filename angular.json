@@ -94,7 +94,9 @@
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "assets/games/snake.js"
+            ]
           }
         }
       }

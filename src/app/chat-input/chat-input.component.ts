@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
-import { Message } from '../interfaces/message';
 import { Room } from '../models/room';
 import { SessionService } from '../services/session.service';
 import { API_BASE_URL, CHATTING_ROUTE} from 'src/globals';
+import { Message } from '../models/message';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat-input',
@@ -15,7 +16,7 @@ export class ChatInputComponent implements OnInit {
 
   fieldValue!: string;
 
-  constructor(private http: HttpClient, private session: SessionService) { }
+  constructor(private http: HttpClient, private session: SessionService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -41,20 +42,20 @@ export class ChatInputComponent implements OnInit {
     room = new Room("1", "Room1");
 
     // Préparer le message
-    messageToSend.contenu = this.fieldValue;
-    messageToSend.date = this.getDate();
-    messageToSend.user = user;
+    messageToSend = new Message(this.getDate(), user, this.fieldValue, room);
     //messageToSend.room = room;
 
     this.http.post(
       API_BASE_URL + CHATTING_ROUTE,
-      messageToSend as Object
-    ).subscribe( (res) => console.log(res));
+      messageToSend
+    ).subscribe( (res) => {
+      console.log(res);
+      this.router.navigate([CHATTING_ROUTE]);
+    });
   }
 
-
-  getDate():string{
+  getDate(): string{
     let date = new Date();
-    return date.toString();
+    return date.toLocaleTimeString();
   }
 }

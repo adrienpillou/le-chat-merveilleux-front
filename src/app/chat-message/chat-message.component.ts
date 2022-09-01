@@ -20,7 +20,7 @@ export class ChatMessageComponent implements OnInit {
     
     let clientID: number;
     clientID = this.session.getUserId();
-    if (this.message.user.id == 1){
+    if (this.message.user.id == clientID){
       return true;
     }
     return false;
