@@ -17,7 +17,6 @@ import { CalcToolComponent } from './calc-tool/calc-tool.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
-import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -33,8 +32,6 @@ import { ProfileComponent } from './profile/profile.component';
     ChatSidenavComponent,
     CalcToolComponent,
     SnakeGameComponent,
-    ProfileComponent,
-    
   ],
   imports: [
     BrowserModule,
