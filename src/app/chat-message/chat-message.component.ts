@@ -17,7 +17,6 @@ export class ChatMessageComponent implements OnInit {
 
   // A compléter
   isSelf():boolean{
-    
     return true;
   }
 
