@@ -29,7 +29,6 @@ export class LoginFormComponent implements OnInit {
       return;
 
     // Authentifier en passant par l'API
-    let data: Object;
     this.http.post(
       API_BASE_URL + LOGIN_ROUTE,
       {
