@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '../interfaces/message-interface';
+import { Message } from '../models/message';
+import { API_BASE_URL, CHATTING_ROUTE } from 'src/globals';
 
 @Component({
   selector: 'app-chat-box',
@@ -13,12 +14,13 @@ export class ChatBoxComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getMessages("http://localhost:7777/chattin")
+    this.getMessages(API_BASE_URL + CHATTING_ROUTE)
   }
 
   getMessages(url:string){
     this.http.get(url).subscribe(data => {
       this.messages = data as Message[];
+      console.log(this.messages);
     });
   }
 

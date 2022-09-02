@@ -1,6 +1,6 @@
 <mat-card class="message-card" [ngClass]="isSelf() ? 'self':'other' ">
     <mat-card-title class="message-autor">{{message.user.pseudo}}</mat-card-title >
-    <mat-card-subtitle class="message-time">{{message.date}}</mat-card-subtitle>
+    <mat-card-subtitle class="message-time">{{time}}</mat-card-subtitle>
     <mat-card-content class="message-content">
         {{message.contenu}}
     </mat-card-content>

@@ -2,7 +2,7 @@ import { User } from '../models/user';
 import { Room } from './room';
 
 export class Message {
-    public date!:Date;
+    public date!:string;
     public user!: User;
     public contenu!: string;
     public room!: Room
