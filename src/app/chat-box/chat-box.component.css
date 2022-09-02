@@ -1,5 +1,5 @@
 .chat-box{
     width: 40%;
-    /*border: 1px dashed red;*/
+    border: 1px dashed red;
     height: 600px;
 }

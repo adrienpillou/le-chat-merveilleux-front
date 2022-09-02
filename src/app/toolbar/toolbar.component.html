@@ -1,10 +1,11 @@
 <mat-toolbar>
     <span id="logo">{{title}}</span>
     <div id="options">
-        <button mat-icon-button id="avatar-icon-button" color="disabled" *ngIf="isUserConnected()" routerLink="/profile"><img src="https://avatars.dicebear.com/api/adventurer/100.svg"/></button>
+        
         <button mat-button id="home-button" routerLink="/home">Home</button>
         <button mat-button id="chat-button" routerLink="/chattin" *ngIf="isUserConnected()">Salons</button>
         <button mat-button id="chat-button" routerLink="/widgets" *ngIf="isUserConnected()" routerLink="/widgets">Widgets</button>
+        <button mat-icon-button id="avatar-icon-button" color="disabled" *ngIf="isUserConnected()" routerLink="/profile" [matTooltip]="pseudo"><img [src]="avatarUrl"/></button>
         <button mat-button id="connect-button" routerLink="/login" *ngIf="!isUserConnected()">Connexion</button>
         <button mat-button color="warn" id="disconnect-button" (click)="disconnectUser()" *ngIf="isUserConnected()">Deconnexion</button>
         <!--<button mat-button id="sign-button" routerLink="/signin">S'inscrire</button>-->

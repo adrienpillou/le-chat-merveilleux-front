@@ -18,6 +18,7 @@ import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { WidgetsComponent } from './widgets/widgets.component';
+import { MatTooltipModule } from '@angular/material/tooltip'; 
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { WidgetsComponent } from './widgets/widgets.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
