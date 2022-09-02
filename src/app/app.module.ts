@@ -19,7 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MeteoComponent } from './meteo/meteo.component'; 
+import { MeteoComponent } from './meteo/meteo.component';
+import { TetrisGameComponent } from './tetris-game/tetris-game.component'; 
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { MeteoComponent } from './meteo/meteo.component';
     SnakeGameComponent,
     WidgetsComponent,
     MeteoComponent,
+    TetrisGameComponent,
   ],
   imports: [
     BrowserModule,

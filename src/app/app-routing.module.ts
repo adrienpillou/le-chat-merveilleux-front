@@ -6,6 +6,7 @@ import {ChatBoxComponent} from './chat-box/chat-box.component';
 import { HomeComponent } from './home/home.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { WidgetsComponent } from './widgets/widgets.component';
+import { TetrisGameComponent } from './tetris-game/tetris-game.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: "widgets/snake",
     component: SnakeGameComponent
+  },
+  {
+    path: "widgets/tetris",
+    component: TetrisGameComponent
   },
   {
     path: "widgets",
