@@ -20,6 +20,7 @@ export class ChatInputComponent implements OnInit {
   constructor(private http: HttpClient, private session: SessionService, private router: Router) { }
 
   ngOnInit(): void {
+    this.bindEnterKey();
   }
 
 
@@ -29,12 +30,13 @@ export class ChatInputComponent implements OnInit {
     let messageToSend!: Message;
     let room!: Room;
 
-    this.session.getLogin();
-
     if(!this.session.isUserConnected()){
       console.error("Impossible d'envoyer un message : PAS DE SESSION");
       return;
     }
+
+    if (this.fieldValue == "")
+      return;
 
     // Récupérer l'auteur du message [User]
     user = this.session.getUserFromSession();
@@ -60,5 +62,16 @@ export class ChatInputComponent implements OnInit {
   getDate(): string{
     let date = new Date();
     return date.toLocaleTimeString();
+  }
+
+  // Associer la touche entrée au bouton HTML envoyer
+  bindEnterKey(){
+    let sendButton: HTMLButtonElement = document.querySelector("#send-button") as HTMLButtonElement;
+    let inputField: HTMLInputElement = document.querySelector("#field") as HTMLInputElement;
+    inputField.addEventListener("keypress", (event) => {
+      if(event.key === "Enter"){
+        sendButton.click();
+      }
+    });
   }
 }

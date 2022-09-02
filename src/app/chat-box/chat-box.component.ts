@@ -20,7 +20,6 @@ export class ChatBoxComponent implements OnInit {
   getMessages(url:string){
     this.http.get(url).subscribe(data => {
       this.messages = data as Message[];
-      console.log(this.messages);
     });
   }
 
