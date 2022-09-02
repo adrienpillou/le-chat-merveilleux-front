@@ -18,7 +18,8 @@ import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { WidgetsComponent } from './widgets/widgets.component';
-import { MatTooltipModule } from '@angular/material/tooltip'; 
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MeteoComponent } from './meteo/meteo.component'; 
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     CalcToolComponent,
     SnakeGameComponent,
     WidgetsComponent,
+    MeteoComponent,
   ],
   imports: [
     BrowserModule,

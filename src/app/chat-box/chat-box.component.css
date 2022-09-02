@@ -1,5 +1,7 @@
 .chat-box{
     width: 40%;
-    border: 1px dashed red;
-    height: 600px;
+    /*border: 1px dashed red;*/
+    height: 800px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
