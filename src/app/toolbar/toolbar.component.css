@@ -25,3 +25,8 @@ ul{
 #pseudo-pill{
     color: darkgray;
 }
+
+#avatar-icon-button{
+    width: 60px;
+    height: 60px;
+}

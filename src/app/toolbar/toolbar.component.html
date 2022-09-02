@@ -1,7 +1,7 @@
 <mat-toolbar>
     <span id="logo">{{title}}</span>
     <div id="options">
-        <button mat-button id="pseudo-pill" color="disabled" *ngIf="isUserConnected()" routerLink="/profile">{{pseudo}}</button>
+        <button mat-icon-button id="avatar-icon-button" color="disabled" *ngIf="isUserConnected()" routerLink="/profile"><img src="https://avatars.dicebear.com/api/adventurer/100.svg"/></button>
         <button mat-button id="home-button" routerLink="/home">Home</button>
         <button mat-button id="chat-button" routerLink="/chattin" *ngIf="isUserConnected()">Salons</button>
         <button mat-button id="chat-button" routerLink="/widgets" *ngIf="isUserConnected()" routerLink="/widgets">Widgets</button>
