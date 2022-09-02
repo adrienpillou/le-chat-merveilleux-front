@@ -1,6 +1,5 @@
-.container{
+.chat-box{
     width: 40%;
-    border: 1px dashed red;
-    height: auto;
-    margin-bottom: 100px;
+    /*border: 1px dashed red;*/
+    height: 600px;
 }

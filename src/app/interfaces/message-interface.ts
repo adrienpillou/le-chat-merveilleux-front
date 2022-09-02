@@ -1,5 +1,5 @@
-import { Room } from "./room";
-import { User } from "./user";
+import { Room } from "./room-interface";
+import { User } from "./user-interface";
 
 export interface Message {
     date: string;

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Session } from '../interfaces/session';
+import { Session } from '../interfaces/session-interface';
 import { User } from '../models/user';
 /* Service de gestion de la session */
 

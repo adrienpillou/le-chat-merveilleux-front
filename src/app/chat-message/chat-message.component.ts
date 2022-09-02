@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message } from '../interfaces/message';
+import { Message } from '../interfaces/message-interface';
 import { SessionService } from '../services/session.service';
 
 @Component({

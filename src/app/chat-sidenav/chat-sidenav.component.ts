@@ -13,7 +13,8 @@ export class ChatSidenavComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.show();
+    this.hide();
+    this.addEvents();
   }
 
   hide(){
@@ -26,5 +27,21 @@ export class ChatSidenavComponent implements OnInit {
     let e = document.querySelector(".sidenav");
     e?.classList.remove("hidden");
     e?.classList.add("visible");
+  }
+
+  // Evenements d'interaction avec la sidenav
+  addEvents(){
+    let sidenavCollider: HTMLDivElement = document.querySelector("#sidenav-collider") as HTMLDivElement;
+    let sidenavElement: HTMLDivElement = document.querySelector('.sidenav')as HTMLDivElement;
+    sidenavCollider.addEventListener("mouseenter", (e) => {
+      this.show();
+    });
+    sidenavElement.addEventListener("mouseleave", (e) => {
+      this.hide();
+    });
+  }
+
+  fetchRooms(){
+
   }
 }

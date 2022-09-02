@@ -45,12 +45,13 @@ export class ChatInputComponent implements OnInit {
     messageToSend = new Message(this.getDate(), user, this.fieldValue, room);
     //messageToSend.room = room;
 
+    console.warn(messageToSend);
     this.http.post(
       API_BASE_URL + CHATTING_ROUTE,
       messageToSend
     ).subscribe( (res) => {
       console.log(res);
-      this.router.navigate([CHATTING_ROUTE]);
+      this.fieldValue = "";
     });
   }
 

@@ -3,20 +3,37 @@
     background-color: #424242;
     margin: 0;
     left: 0;
-    width: 15%;
-    position: fixed;
+    top: 0;
+    width: 20%;
+    position: absolute;
     text-align: center;
     color: white;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.571);
-    display: inline;
+}
+
+#sidenav-collider{
+    margin:0;
+    left: 0;
+    position: fixed;
+    top:0;
+    /*border: 1px dashed greenyellow;*/
+    width: 24px;
+    height: 100%;
+    /*pointer-events: none;*/
 }
 
 .visible{
-    visibility: visible;
+    min-width: 200px;
+    left :0%;
+    transition-property: left;
+    transition-duration: .15s;
 }
 
 .hidden{
-    visibility: hidden;
+    left: -20%;
+    transition-property: left;
+    transition-duration: .15s;
+    transition-timing-function: cubic-bezier();
 }
 
 .button-container{
