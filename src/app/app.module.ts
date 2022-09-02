@@ -20,7 +20,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MeteoComponent } from './meteo/meteo.component';
-import { TetrisGameComponent } from './tetris-game/tetris-game.component'; 
+import { TetrisGameComponent } from './tetris-game/tetris-game.component';
+import { PacmanGameComponent } from './pacman-game/pacman-game.component'; 
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { TetrisGameComponent } from './tetris-game/tetris-game.component';
     WidgetsComponent,
     MeteoComponent,
     TetrisGameComponent,
+    PacmanGameComponent,
   ],
   imports: [
     BrowserModule,
