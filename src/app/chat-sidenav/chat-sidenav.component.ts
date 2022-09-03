@@ -15,6 +15,7 @@ export class ChatSidenavComponent implements OnInit {
   ngOnInit(): void {
     this.hide();
     this.addEvents();
+    this.bindButtons();
   }
 
   hide(){
@@ -41,7 +42,19 @@ export class ChatSidenavComponent implements OnInit {
     });
   }
 
-  fetchRooms(){
+  // Récupérer les messages d'un salon
+  fetchRooms(roomName: string){
+    console.log(roomName);
+    this.hide();
+  }
 
+  // Associer un bouton de la sidenave à un événement
+  bindButtons(){
+    let buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".room-link") as NodeListOf<HTMLButtonElement>;
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click",
+        (event) => this.fetchRooms(buttons[i].innerText)
+      );
+    }
   }
 }
