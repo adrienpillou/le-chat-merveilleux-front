@@ -1,7 +1,7 @@
 .container-chat-box{   
     width: 55%;    
     height: 450px;
-    background-color: rgb(206, 191, 191);
+    background-color: rgb(240, 176, 176);
     margin: 0 auto;
     margin-top: 2%;
     border-top-left-radius: 25px;
@@ -13,18 +13,19 @@
     justify-content: flex-end;
     padding: 1%; 
     box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.571); 
+    border-style: solid;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
 }
 ::-webkit-scrollbar-track {
     background: gainsboro;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background: rgb(189, 127, 127);
-    border-radius: 5px;
+    background: hsl(212, 93, 24);
+    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #555;

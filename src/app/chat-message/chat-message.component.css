@@ -11,5 +11,10 @@
 
 .message-card{
     width: 66%;
+    border-style: outset;
 }
 
+img{
+    width: 40px;
+    border-radius: 50%;
+}
