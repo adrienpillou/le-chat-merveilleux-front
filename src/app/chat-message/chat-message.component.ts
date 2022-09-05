@@ -10,11 +10,20 @@ import { SessionService } from '../services/session.service';
 export class ChatMessageComponent implements OnInit {
   @Input() public message!: Message;
   public time!: string;
-
+  avatarUrl!: string;
   constructor(private session: SessionService) { }
 
   ngOnInit(): void {
     this.formatTimeStamp();
+    if(this.isUserConnected()){
+      this.avatarUrl = this.session.getUserFromSession().avatarUrl;
+    }else{
+      this.avatarUrl = "";
+    }    
+  }
+
+  isUserConnected(): boolean{
+    return this.session.isUserConnected();
   }
 
   // Retourne vrai si le message est envoyé par l'utilisateur de la session

@@ -9,8 +9,7 @@
     color: cornsilk;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
+    justify-content: center;    
 }
 
 #send-button{

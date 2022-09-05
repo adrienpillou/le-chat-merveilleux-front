@@ -1,13 +1,15 @@
 .self{
     float:right;
-    background-color:#1D61EE;
+    background-color: #0078ff;
     color: white;
 }
 
 .other{
     float:left;
+    background-color: white;
 }
 
 .message-card{
     width: 66%;
 }
+

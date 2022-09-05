@@ -23,7 +23,7 @@ export class ChatInputComponent implements OnInit {
     this.bindEnterKey();
   }
 
-
+  // merci adrien
   // Envoyer un message à l'API
   sendMessage(){
     let user!: User;

@@ -1,8 +1,31 @@
-.chat-box{
-    width: 40%;
-    /*border: 1px dashed red;*/
-    height: 780px;
-    margin-top: 8px;
-    overflow: hidden;
+.container-chat-box{   
+    width: 55%;    
+    height: 450px;
+    background-color: rgb(206, 191, 191);
+    margin: 0 auto;
+    margin-top: 2%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 1%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 1%;
+    overflow: hidden;  
     overflow-y: scroll;
+    justify-content: flex-end;
+    padding: 1%; 
+    box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.571); 
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: gainsboro;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(189, 127, 127);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
