@@ -42,11 +42,10 @@ export class ChatInputComponent implements OnInit {
     user = this.session.getUserFromSession();
 
     // Préparer la room
-    room = new Room("1", "Room1");
+    room = new Room("1", null);
 
     // Préparer le message
     messageToSend = new Message(user, this.fieldValue, room);
-    //messageToSend.room = room;
 
     console.warn(messageToSend);
     this.http.post(
