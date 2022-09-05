@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_BASE_URL, MESSAGES_BY_ROOM_ROUTE, ROOMS_ROUTE } from 'src/globals';
 import { Room } from '../models/room';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-chat-sidenav',
@@ -12,7 +13,7 @@ import { Room } from '../models/room';
 export class ChatSidenavComponent implements OnInit {
   rooms!: Room[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private session: SessionService) { }
 
   ngOnInit(): void {
     this.hide();
@@ -59,5 +60,14 @@ export class ChatSidenavComponent implements OnInit {
     this.http.get(`${API_BASE_URL}${MESSAGES_BY_ROOM_ROUTE}/${roomID}`).subscribe(res => {
       console.log(res);
     });
+    this.session.setCurrentRoom(roomID);
+  }
+
+  isCurrentRoom(roomId: string | null): boolean{
+    let currentRoomId = this.session.getCurrentRoom();
+    if (currentRoomId === roomId){
+      return true;
+    }
+    return false;
   }
 }
