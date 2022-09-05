@@ -37,4 +37,12 @@ export class ToolbarComponent implements OnInit {
     this.session.deleteSession();
     this.router.navigate([HOME_ROUTE]);
   }
+
+  getPseudo(): string{
+    return this.session.getPseudo();
+  }
+
+  getAvatar(){
+    return this.session.getUserAvatarUrl();
+  }
 }

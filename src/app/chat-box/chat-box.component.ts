@@ -32,7 +32,6 @@ export class ChatBoxComponent implements OnInit {
   //Descendre le slider en bas de la boite de chat
   scrollToBottom(){
     let chatBoxDiv: HTMLElement = document.querySelector(".container-chat-box") as HTMLElement;
-    console.log(chatBoxDiv);
     chatBoxDiv.scroll(0, chatBoxDiv.scrollHeight);
   }
 }

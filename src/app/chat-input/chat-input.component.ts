@@ -35,9 +35,10 @@ export class ChatInputComponent implements OnInit {
       return;
     }
 
-    if (this.fieldValue == "")
+    if (this.fieldValue == undefined){
       return;
-
+    }
+      
     // Récupérer l'auteur du message [User]
     user = this.session.getUserFromSession();
 

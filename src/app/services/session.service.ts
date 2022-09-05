@@ -32,6 +32,14 @@ export class SessionService {
     localStorage.setItem('avatarUrl', url);
   }
 
+  setCurrentRoom(roomName: string){
+    localStorage.setItem("currentRoom", roomName);
+  }
+
+  getCurrentRoom(): string{
+    return localStorage.getItem("currentRoom") as string;
+  }
+
   getPseudo(){
     let pseudo:string | null;
     pseudo = localStorage.getItem('pseudo');
@@ -64,7 +72,7 @@ export class SessionService {
   }
 
   isUserConnected(): boolean{
-    if (this.getLogin() == ""){
+    if (this.getLogin() == "" || this.getUserId() == null || this.getPseudo() == ""){
       return false;
     }
     return true;
@@ -77,6 +85,7 @@ export class SessionService {
       this.getLogin(),
       ""
     );
+    user.id = this.getUserId();
     user.avatarUrl = this.getUserAvatarUrl() as string;
     return user;
   }
@@ -86,6 +95,7 @@ export class SessionService {
     this.setPseudo(user.pseudo);
     this.setUserId(user.id);
     this.setAvatarUrl(user.avatarUrl);
+    localStorage.setItem("user", JSON.stringify(user));
     console.warn(`Session créée pour ${user.login}`);
   }
 }

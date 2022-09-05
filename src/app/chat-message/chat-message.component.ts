@@ -11,12 +11,14 @@ export class ChatMessageComponent implements OnInit {
   @Input() public message!: Message;
   public time!: string;
   avatarUrl!: string;
+
   constructor(private session: SessionService) { }
 
   ngOnInit(): void {
-    this.formatTimeStamp();
+    
     if(this.isUserConnected()){
       this.avatarUrl = this.session.getUserFromSession().avatarUrl;
+      this.formatTimeStamp();
     }else{
       this.avatarUrl = "";
     }    
