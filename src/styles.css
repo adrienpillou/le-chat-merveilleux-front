@@ -65,3 +65,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .form-container mat-form-field{
     color: white;
 }
+
+.message{
+    margin-top: 32px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.error{
+    color: red;
+}
