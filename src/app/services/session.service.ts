@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Session } from '../interfaces/session';
+import { Session } from '../interfaces/session-interface';
 import { User } from '../models/user';
 /* Service de gestion de la session */
 
@@ -24,6 +24,10 @@ export class SessionService {
     localStorage.setItem('userId', id.toString());
   }
 
+  setAvatarUrl(url: string){
+    localStorage.setItem('avatarUrl', url);
+  }
+
   getPseudo(){
     let pseudo:string | null;
     pseudo = localStorage.getItem('pseudo');
@@ -44,6 +48,10 @@ export class SessionService {
 
   getUserId(){
     return parseInt(localStorage.getItem('userId') || "");
+  }
+
+  getUserAvatarUrl(){
+    return localStorage.getItem('avatarUrl');
   }
 
   deleteSession(){
@@ -72,6 +80,7 @@ export class SessionService {
     this.setLogin(user.login);
     this.setPseudo(user.pseudo);
     this.setUserId(user.id);
+    this.setAvatarUrl(user.avatarUrl);
     console.warn(`Session créée pour ${user.login}`);
   }
 }

@@ -17,6 +17,11 @@ import { CalcToolComponent } from './calc-tool/calc-tool.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { WidgetsComponent } from './widgets/widgets.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MeteoComponent } from './meteo/meteo.component';
+import { TetrisGameComponent } from './tetris-game/tetris-game.component';
+import { PacmanGameComponent } from './pacman-game/pacman-game.component'; 
 
 
 @NgModule({
@@ -32,7 +37,10 @@ import { HttpClientModule} from '@angular/common/http';
     ChatSidenavComponent,
     CalcToolComponent,
     SnakeGameComponent,
-    
+    WidgetsComponent,
+    MeteoComponent,
+    TetrisGameComponent,
+    PacmanGameComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,8 @@ import { HttpClientModule} from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

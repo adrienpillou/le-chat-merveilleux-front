@@ -1,5 +1,5 @@
 <div class="chat-input">
-    <input id="field" type="text" placeholder="Message" [(ngModel)]="fieldValue"/>
+    <input id="field" placeholder="Message" autocomplete="off"  [(ngModel)]="fieldValue" />
     <button mat-fab color="primary" id="send-button" (click)="sendMessage()">
         <mat-icon>send</mat-icon>
     </button>

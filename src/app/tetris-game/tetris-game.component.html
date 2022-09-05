@@ -1,0 +1,461 @@
+<body onload="Init()" background="tetris_files/btztilea.gif">
+    <table>
+        <tbody>
+            <tr>
+                <td valign="top">
+                    <div style="color: red;">
+                        <h1 size="+3">Tetris:<br>use<br>arrow<br>keys</h1>
+                    </div>
+                </td>
+                <td>
+                    <table id="PlayingField" height="300" width="150">
+                        <tbody>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_1_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_2_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_3_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_4_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_5_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_6_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_7_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_8_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_9_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_10_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_11_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_12_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_13_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_14_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_15_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_16_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_17_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_18_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_19_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_1"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_2"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_3"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_4"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_5"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_6"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_7"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_8"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_9"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                                <td style="background-color: rgb(0, 0, 0);" id="td_20_10"><img
+                                        src="tetris_files/spacer.gif" height="1" width="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td valign="top"><input id="BUTTON2" onclick="setTimeout('Start()',200)" value="Start" name="BUTTON2"
+                        type="button"><br>SCORE:<br><input readonly="readonly" value="6" name="score"> </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
