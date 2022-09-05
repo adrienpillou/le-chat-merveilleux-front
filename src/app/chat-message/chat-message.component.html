@@ -2,6 +2,7 @@
     <mat-card-title class="message-autor">{{message.user.pseudo}}</mat-card-title >
     <mat-card-subtitle class="message-time">{{message.date}}</mat-card-subtitle>
     <mat-card-content [style.overflow]="'auto'" class="message-content">
+        <img [src]="avatarUrl"/>
         {{message.contenu}}
     </mat-card-content>
 </mat-card>
