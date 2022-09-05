@@ -20,8 +20,12 @@ export class SessionService {
     localStorage.setItem('login', login);
   }
 
-  setUserId(id: number){
-    localStorage.setItem('userId', id.toString());
+  setUserId(id: number | null){
+    if(id == null){
+      localStorage.setItem('userId', "");
+    }else{
+      localStorage.setItem('userId', id.toString());
+    } 
   }
 
   setAvatarUrl(url: string){
@@ -71,8 +75,9 @@ export class SessionService {
       this.getUserId(),
       this.getPseudo(),
       this.getLogin(),
-      "*****"
+      ""
     );
+    user.avatarUrl = this.getUserAvatarUrl() as string;
     return user;
   }
 

@@ -13,11 +13,16 @@ import { API_BASE_URL, LOGIN_ROUTE, HOME_ROUTE} from 'src/globals';
 export class LoginFormComponent implements OnInit {
   login: string = "";
   password: string = "";
+  public message!: string;
 
   constructor(public router: Router, private http: HttpClient, private session: SessionService) {
   }
 
   ngOnInit(): void {}
+
+  writeMessage(message: string){
+    this.message = message;
+  }
 
   loginUsingForm(){
     
@@ -36,8 +41,14 @@ export class LoginFormComponent implements OnInit {
         password: this.password
       }
       ).subscribe(r => {
-        console.log(r as User);// Données retournés par l'API 
-        
+        console.log(r as User);// Données retournées par l'API 
+
+        // Mot de passe incorrect ou identifiant inconnu
+        if(r == null){
+          this.writeMessage("Mot de passe ou identifiant incorrect.");
+          return;
+        }
+
         // Supprimer la session courante
         this.session.deleteSession();
         this.session.createUserSession(r as User);

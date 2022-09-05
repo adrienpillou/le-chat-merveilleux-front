@@ -20,7 +20,7 @@ ul{
 }
 
 #avatar-icon-button{
-    color: darkgray;
+    background-color: rgb(222, 222, 222);
     margin-left: 16px;
     width: 60px;
     height: 60px;

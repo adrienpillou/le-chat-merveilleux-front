@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MaterialModule} from './material/material.module';
+import { MaterialModule } from './material/material.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SigninFormComponent } from './signin-form/signin-form.component';
@@ -40,7 +40,7 @@ import { PacmanGameComponent } from './pacman-game/pacman-game.component';
     WidgetsComponent,
     MeteoComponent,
     TetrisGameComponent,
-    PacmanGameComponent,
+    PacmanGameComponent
   ],
   imports: [
     BrowserModule,
