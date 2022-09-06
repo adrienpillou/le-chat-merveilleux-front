@@ -11,7 +11,7 @@
         <p style="color:rgb(3, 3, 97);">Score CHAT : 00</p>        
       </div><br>
     </form>
-      <div class="zone-modif">
+      <form class="zone-modif">
         <div class="text-center">
           <p> Modifier votre pseudo </p>
           <mat-form-field>
@@ -32,10 +32,11 @@
 
           </mat-form-field><br>
         </div><br>
-      </div>      
-        <button class="btn btn-primary text-center" routerLink="/home">Accueil</button>
 
-        <button type="submit" [disabled]="!formProfil.form.valid" class="btn btn-primary text-center">Valider la modification de profil</button>    
+        <button class="btn btn-primary text-center" routerLink="/home">Accueil</button>
+        <button type="submit" (click)="modifProfil()"  [disabled]="!formProfil.form.valid" class="btn btn-primary text-center">Valider la modification de profil</button>    
+      </form>      
+        
 
   </div>
 

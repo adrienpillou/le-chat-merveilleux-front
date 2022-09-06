@@ -298,5 +298,4 @@ function TetrisGame (){
 	}
 	// start the game
   
-};
 
