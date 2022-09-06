@@ -9,6 +9,7 @@ import { WidgetsComponent } from './widgets/widgets.component';
 import { TetrisGameComponent } from './tetris-game/tetris-game.component';
 import { PacmanGameComponent } from './pacman-game/pacman-game.component';
 import { CalcToolComponent } from './calc-tool/calc-tool.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -47,7 +48,12 @@ const routes: Routes = [
   {
     path: "widgets",
     component: WidgetsComponent
-  }
+  },
+  {
+    path: "profile",
+    component: ProfileComponent
+  },
+
 
   // Ajouter la route de la page d'accueil
 ];

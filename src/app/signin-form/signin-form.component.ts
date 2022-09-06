@@ -12,9 +12,11 @@ import { User } from '../models/user';
 
 export class SigninFormComponent implements OnInit {
   pseudo!: string;
-  email!: string;
+  login!: string;
   password!: string;
   confirmPassword!: string;
+  telephone!:string;
+  email!:string;
   public message!: string;
 
 
@@ -28,7 +30,7 @@ export class SigninFormComponent implements OnInit {
   signInUsingForm(){
     this.message = "";
 
-    if(this.email == "" || this.email == undefined){
+    if(this.login == "" || this.login == undefined){
       this.message += "Identifiant manquant";
     }
 
@@ -38,6 +40,12 @@ export class SigninFormComponent implements OnInit {
 
     if(this.password == "" || this.password == undefined){
       this.message += "\nMot de passe manquant";
+    }
+    if(this.telephone == "" || this.telephone == undefined){
+      this.message += "\nTelephone manquant";
+    }
+    if(this.email == "" || this.email == undefined){
+      this.message += "\nEmail manquant";
     }
 
     if(this.confirmPassword != this.password){
@@ -51,14 +59,16 @@ export class SigninFormComponent implements OnInit {
     }
       
     let userObject!: Object;
-    let user: User = new User(null, this.pseudo, this.email, this.password);
+    let user: User = new User(null, this.pseudo, this.login, this.password, this.telephone, this.email);
     user.pickAvatar();
 
     userObject = {
       pseudo: user.pseudo,
       avatarUrl: user.avatarUrl,
       login: user.login,
-      password: user.password
+      password: user.password,
+      telephone: user.telephone,
+      email: user.email
     }
 
     this.http.post("http://localhost:7777/signin", userObject).subscribe( res => {

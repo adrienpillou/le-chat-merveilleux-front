@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -22,6 +21,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MeteoComponent } from './meteo/meteo.component';
 import { TetrisGameComponent } from './tetris-game/tetris-game.component';
 import { PacmanGameComponent } from './pacman-game/pacman-game.component'; 
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -40,7 +40,8 @@ import { PacmanGameComponent } from './pacman-game/pacman-game.component';
     WidgetsComponent,
     MeteoComponent,
     TetrisGameComponent,
-    PacmanGameComponent
+    PacmanGameComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
