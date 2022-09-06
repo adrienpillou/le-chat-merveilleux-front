@@ -9,7 +9,9 @@ export class RoomsService {
   public messages!: Message[];
   public room!: Room;
 
-  constructor() { }
+  constructor() {
+    this.messages = [];
+  }
 
   setMessages(messages: Message[]){
     this.messages = messages;

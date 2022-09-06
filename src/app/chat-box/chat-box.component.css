@@ -29,3 +29,19 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.info-message{
+    font-style: italic;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.visible{
+    visibility: visible;
+    display: block;
+}
+
+.hidden{
+    visibility: hidden;
+    display: none;
+}
