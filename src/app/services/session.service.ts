@@ -37,7 +37,11 @@ export class SessionService {
     localStorage.setItem('avatarUrl', url);
   }
 
-  setUserTelephone(telephone: string){
+  setUserTelephone(telephone: string | null){
+    if(telephone == null){
+      localStorage.setItem('telephone', "");
+      return;
+    }
     localStorage.setItem('telephone', telephone);
   }
 
@@ -97,15 +101,6 @@ export class SessionService {
     return telephone;
   }
 
-  getEmail(){
-    let email:string | null;
-    email = localStorage.getItem('email');
-    if(email == null){
-      return "";
-    }
-    return email;
-  }
-
   getUserAvatarUrl(){
     return localStorage.getItem('avatarUrl');
   }
@@ -128,11 +123,7 @@ export class SessionService {
       this.getPseudo(),
       this.getLogin(),
       this.getPassword(),
-      this.getTelephone(),
-      this.getEmail(),
-
-      
-      //"*****"
+      this.getTelephone()
     );
     user.id = this.getUserId();
     user.avatarUrl = this.getUserAvatarUrl() as string;

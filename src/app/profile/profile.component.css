@@ -1,5 +1,5 @@
 p{
-    color:whitesmoke;
+    color:black;
 }
 .container{ 
     display: flex;
@@ -7,15 +7,37 @@ p{
     /*border: 1px dashed greenyellow;*/
     width: 600px;
     align-items: center;
-    margin-top: 8%;
-    margin-bottom: 8%;
+    margin-top: 16px;
     padding: 16px 0px;
     border-radius: 5px;
-    background-color: rgba(173,216,230, 0.7);
+    background-color: rgba(173,216,230, 0.85);
     box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.571);    
 }
 
 button{
     width:100%;
     margin: 8px 0px;
+}
+
+#pick-button{
+    background-color: white;
+    width: 48px;
+    height: 48px;
+    display: block;
+
+}
+
+.avatar-profile{
+    width: 80px;
+    height: 80px;
+    background-color: darkgrey;
+    border-radius: 100px;
+}
+
+.form-control{
+    color: black;
+}
+
+.label{
+    font-weight: 500;
 }

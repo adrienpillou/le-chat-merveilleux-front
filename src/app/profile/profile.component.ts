@@ -15,26 +15,24 @@ import { User } from '../models/user';
 export class ProfileComponent implements OnInit{
 
   public user!:any;
-  pseudo!: string;
-  id!: any;
+  public avatarUrl!:string;
+  //pseudo!: string;
+  //id!: any;
 
   constructor(private http: HttpClient,public session: SessionService, private router: Router) { }
 
-modifProfil(){
-  this.http.put('http://localhost:7777/user/' + this.user.id, this.user).subscribe({
-    next: (data) => {  this.user = data; this.session.createUserSession(this.user) },
-    error: (err) => { console.log(err) }
-  });
-  
-}
 
   
   ngOnInit() {
 
     if(this.isUserConnected()){
       this.user = this.session.getUserFromSession();
-    }
+      this.avatarUrl = this.user.avatarUrl;
+      console.log(this.user);
+    }else{
 
+    }
+/*
     if(this.isUserConnected()){
       this.pseudo = this.session.getUserFromSession().pseudo;
 
@@ -45,10 +43,38 @@ modifProfil(){
       this.id = this.session.getUserFromSession().id;
     }else{
       this.id = "";
-    }
+    }*/
   }
+
   isUserConnected(): boolean{
     return this.session.isUserConnected();
   }
 
+  modifProfil(){
+    this.http.put('http://localhost:7777/user/' + this.user.id, this.user).subscribe({
+      next: (data) => {  this.user = data; this.session.createUserSession(this.user) },
+      error: (err) => { console.log(err) }
+    });
+  }
+
+  getPseudo(){
+    return this.session.getPseudo();
+  }
+
+  getLogin(){
+    return this.session.getLogin();
+  }
+
+  getPassword(){
+    return this.session.getPassword();
+  }
+
+  getAvatarUrl(){
+    return this.avatarUrl;
+  }
+
+  changeAvatar(){
+    this.avatarUrl = this.user.pickAvatar();
+    console.log(this.avatarUrl);
+  }
 }

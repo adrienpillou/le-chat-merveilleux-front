@@ -12,6 +12,7 @@ import { CalcToolComponent } from './calc-tool/calc-tool.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GameMenuComponent } from './game-menu/game-menu.component';
 import { AppComponent } from './app.component';
+import { MeteoComponent } from './meteo/meteo.component';
 
 const routes: Routes = [
   {
@@ -58,8 +59,10 @@ const routes: Routes = [
     path: "game-menu",
     component: GameMenuComponent
   },
-    
-     
+  {
+    path: "widgets/meteo",
+    component: MeteoComponent  
+  }
 
   // Ajouter la route de la page d'accueil
 ];
