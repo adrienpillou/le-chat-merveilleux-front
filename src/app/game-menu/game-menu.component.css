@@ -1,5 +1,23 @@
-#calc-button{
-    background-image: url(../../assets/Calculatrice.jpg);
+#snake-button{
+    background-image: url(../../assets/Snake.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin:12px 12px;
+}
+#tetris-button{
+    background-image: url(../../assets/Tetris.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin:12px 12px;
+}
+#pacman-button{
+    background-image: url(../../assets/Pacman.jpg);
     background-position: center;
     background-size: cover;
     height: 250px;

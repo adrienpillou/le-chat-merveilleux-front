@@ -130,6 +130,7 @@ export class SessionService {
       this.getPassword(),
       this.getTelephone(),
       this.getEmail(),
+
       
       //"*****"
     );

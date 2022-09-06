@@ -3,7 +3,8 @@
     <div id="options">
         <button mat-button id="home-button" routerLink="/home">Home</button>
         <button mat-button id="chat-button" routerLink="/chattin" *ngIf="isUserConnected()">Salons</button>
-        <button mat-button id="chat-button" routerLink="/widgets" *ngIf="isUserConnected()" routerLink="/widgets">Widgets</button>
+        <button mat-button id="chat-button" routerLink="/widgets" *ngIf="isUserConnected()">Widgets</button>
+        <button mat-button id="chat-button" routerLink="/game-menu" *ngIf="isUserConnected()">Jeux</button>
         <button mat-icon-button id="avatar-icon-button" color="disabled" *ngIf="isUserConnected()" routerLink="/profile" [matTooltip]="getPseudo()"><img [src]="getAvatar()"/></button>
         <button mat-button id="connect-button" routerLink="/login" *ngIf="!isUserConnected()">Connexion</button>
         <button mat-button color="warn" id="disconnect-button" (click)="disconnectUser()" *ngIf="isUserConnected()">Deconnexion</button>
