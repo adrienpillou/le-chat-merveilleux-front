@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SigninFormComponent } from './signin-form/signin-form.component';
-import {ChatBoxComponent} from './chat-box/chat-box.component';
+import { ChatBoxComponent } from './chat-box/chat-box.component';
 import { HomeComponent } from './home/home.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { WidgetsComponent } from './widgets/widgets.component';
@@ -11,6 +11,8 @@ import { PacmanGameComponent } from './pacman-game/pacman-game.component';
 import { CalcToolComponent } from './calc-tool/calc-tool.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GameMenuComponent } from './game-menu/game-menu.component';
+import { MeteoComponent } from './meteo/meteo.component';
+import { ActuComponent } from './actu/actu.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -57,6 +59,14 @@ const routes: Routes = [
   {
     path: "game-menu",
     component: GameMenuComponent
+  },
+  {
+    path: "widgets/meteo",
+    component: MeteoComponent
+  },
+  {
+    path: "widgets/actu",
+    component: ActuComponent
   },
     
      

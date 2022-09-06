@@ -7,6 +7,24 @@
     border-radius: 50%;
     margin:12px 12px;
 }
+#meteo-button{
+    background-image: url(../../assets/Meteo.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin:12px 12px;
+}
+#actu-button{
+    background-image: url(../../assets/Actu.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    margin:12px 12px;
+}
 
 .widgets-container{
     height: auto;

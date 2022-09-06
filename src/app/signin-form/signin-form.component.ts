@@ -57,7 +57,7 @@ export class SigninFormComponent implements OnInit {
     }
       
     let userObject!: Object;
-    let user: User = new User(null, this.pseudo, this.login, this.password, this.telephone, this.email);
+    let user: User = new User(null, this.pseudo, this.login, this.password, this.telephone);
     user.pickAvatar();
 
     userObject = {
@@ -65,8 +65,7 @@ export class SigninFormComponent implements OnInit {
       avatarUrl: user.avatarUrl,
       login: user.login,
       password: user.password,
-      telephone: user.telephone,
-      email: user.email,
+      telephone: user.telephone
     }
 
     this.http.post("http://localhost:7777/signin", userObject).subscribe( res => {

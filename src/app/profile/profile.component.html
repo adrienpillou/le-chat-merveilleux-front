@@ -11,11 +11,11 @@
         <p style="color:rgb(3, 3, 97);">Score CHAT : 00</p>        
       </div><br>
     </form>
-      <form class="zone-modif">
+      <form #formModifProfil="ngForm" (ngSubmit)="modifProfil()">
         <div class="text-center">
           <p> Modifier votre pseudo </p>
           <mat-form-field>
-            <input type="text" matInput class="form-control text-center" style="color:rgb(167, 167, 168);" name="pseudo" [(ngModel)]="user.pseudo">
+            <input type="text" matInput class="form-control text-center" style="color:rgb(99, 99, 196);" name="pseudo" [(ngModel)]="user.pseudo">
           </mat-form-field><br>
         </div>        
         <div class="text-center">
@@ -34,7 +34,7 @@
         </div><br>
 
         <button class="btn btn-primary text-center" routerLink="/home">Accueil</button>
-        <button type="submit" (click)="modifProfil()"  [disabled]="!formProfil.form.valid" class="btn btn-primary text-center">Valider la modification de profil</button>    
+        <button type="submit"  [disabled]="!formProfil.form.valid" class="btn btn-primary text-center">Valider la modification de profil</button>    
       </form>      
         
 
