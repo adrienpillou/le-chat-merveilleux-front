@@ -1,8 +1,8 @@
 export class Room{
-    id!: string;
-    name!: string;
+    id!: number | null;
+    name!: string | null;
 
-    constructor(id: string, name: string){
+    constructor(id: number, name: string | null){
         this.id = id;
         this.name = name;
     }

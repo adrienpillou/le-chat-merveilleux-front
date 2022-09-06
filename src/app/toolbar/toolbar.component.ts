@@ -22,7 +22,6 @@ export class ToolbarComponent implements OnInit {
     if(this.isUserConnected()){
       this.pseudo = this.session.getUserFromSession().pseudo;
       this.avatarUrl = this.session.getUserFromSession().avatarUrl;
-      console.warn(this.pseudo, this.avatarUrl);
     }else{
       this.pseudo = "";
       this.avatarUrl = "";
@@ -36,5 +35,13 @@ export class ToolbarComponent implements OnInit {
   disconnectUser(){
     this.session.deleteSession();
     this.router.navigate([HOME_ROUTE]);
+  }
+
+  getPseudo(): string{
+    return this.session.getPseudo();
+  }
+
+  getAvatar(){
+    return this.session.getUserAvatarUrl();
   }
 }

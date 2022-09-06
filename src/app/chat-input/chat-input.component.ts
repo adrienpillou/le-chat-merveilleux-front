@@ -35,18 +35,20 @@ export class ChatInputComponent implements OnInit {
       return;
     }
 
-    if (this.fieldValue == "")
+    if (this.fieldValue == undefined){
       return;
-
+    }
+      
     // Récupérer l'auteur du message [User]
     user = this.session.getUserFromSession();
 
     // Préparer la room
-    room = new Room("1", "Room1");
+    let roomIndex:number = this.session.getCurrentRoom();
+
+    room = new Room(roomIndex, null);
 
     // Préparer le message
     messageToSend = new Message(user, this.fieldValue, room);
-    //messageToSend.room = room;
 
     console.warn(messageToSend);
     this.http.post(
