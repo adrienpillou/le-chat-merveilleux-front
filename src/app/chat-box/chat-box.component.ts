@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Message } from '../models/message';
-import { API_BASE_URL, CHATTING_ROUTE } from 'src/globals';
+import { API_BASE_URL, CHATTING_ROUTE, LOGIN_ROUTE } from 'src/globals';
 import { WidgetsComponent } from '../widgets/widgets.component';
 import { RoomsService } from '../services/rooms.service';
 import { SessionService } from '../services/session.service';
 import { ChatSidenavComponent } from '../chat-sidenav/chat-sidenav.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat-box',
@@ -18,12 +19,13 @@ export class ChatBoxComponent implements OnInit {
 
   constructor(private http: HttpClient,
               public roomsService: RoomsService,
-              private session: SessionService) { }
+              private session: SessionService,
+              private router: Router) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.messages = this.roomsService.getMessages();
-    }, 1000);
+    if(!this.session.isUserConnected()){
+      this.router.navigate([LOGIN_ROUTE]);
+    }
   }
 
   ngAfterView(){
