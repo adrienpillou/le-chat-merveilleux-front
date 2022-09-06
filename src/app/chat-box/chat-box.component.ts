@@ -38,12 +38,11 @@ export class ChatBoxComponent implements OnInit {
 
   ngAfterViewInit() { 
     this.messages = this.roomsService.getMessages();
-    this.scrollToBottom();
     console.warn("ngAfterViewInit");
   }
 
   isRoomEmpty(): boolean{
-    return this.roomsService.messages.length == 0;
+    return this.roomsService.getMessages().length == 0;
   }
 
   //Descendre le slider en bas de la boite de chat

@@ -23,7 +23,7 @@ button{
     background-color: white;
     width: 48px;
     height: 48px;
-    display: block;
+    margin-left: 12px;
 }
 
 .avatar-profile{

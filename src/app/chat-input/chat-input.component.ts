@@ -7,6 +7,7 @@ import { API_BASE_URL, CHATTING_ROUTE} from 'src/globals';
 import { Message } from '../models/message';
 import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RoomsService } from '../services/rooms.service';
 
 @Component({
   selector: 'app-chat-input',
@@ -17,7 +18,10 @@ export class ChatInputComponent implements OnInit {
 
   fieldValue!: string;
 
-  constructor(private http: HttpClient, private session: SessionService, private router: Router) { }
+  constructor(private http: HttpClient,
+              private session: SessionService,
+              private router: Router,
+              private roomsService: RoomsService) { }
 
   ngOnInit(): void {
     this.bindEnterKey();
@@ -55,9 +59,10 @@ export class ChatInputComponent implements OnInit {
       API_BASE_URL + CHATTING_ROUTE,
       messageToSend
     ).subscribe( (res) => {
-      console.log(res);
+      //console.log(res);
       this.fieldValue = "";
-      location.reload();
+      this.roomsService.fetchMessagesByRoomId(roomIndex);
+      //location.reload();
     });
   }
 

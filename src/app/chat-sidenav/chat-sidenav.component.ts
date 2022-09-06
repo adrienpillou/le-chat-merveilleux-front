@@ -28,8 +28,7 @@ export class ChatSidenavComponent implements OnInit {
     if(this.session.getCurrentRoom() == null){
       this.session.setCurrentRoom(1);
     }
-    
-    this.fetchMessagesByRoomId(this.session.getCurrentRoom());
+    this.roomsService.fetchMessagesByRoomId(this.session.getCurrentRoom());
   }
 
   // Cacher la sidenav
@@ -66,22 +65,19 @@ export class ChatSidenavComponent implements OnInit {
     });
   }
 
-  //Récupérer les messages d'une room en particulier
-  fetchMessagesByRoomId(roomID: number| null) {
-    if(roomID == null)
-      return;
-    this.http.get(`${API_BASE_URL}${MESSAGES_BY_ROOM_ROUTE}/${roomID}`).subscribe(res => {
-      let messages: Message[] = res as Message[];
-      this.roomsService.setMessages(messages);
-    });
-    this.session.setCurrentRoom(roomID);
-  }
-
   isCurrentRoom(roomId: number | null): boolean{
     let currentRoomId = this.session.getCurrentRoom();
     if (currentRoomId === roomId){
       return true;
     }
     return false;
+  }
+
+  loadMessagesFromRoom(id: number | null){
+    if(id == null)
+      return;
+    this.roomsService.fetchMessagesByRoomId(id);
+    this.session.setCurrentRoom(id);
+    this.hide();
   }
 }

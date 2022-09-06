@@ -5,7 +5,7 @@
             <button mat-button color="accent" id="close-button" (click)="this.hide()">
                 <mat-icon>close</mat-icon>
             </button>
-            <button *ngFor="let r of rooms" mat-button (click)="fetchMessagesByRoomId(r.id)" [ngClass]="isCurrentRoom(r.id) ? 'active':''">
+            <button *ngFor="let r of rooms" mat-button (click)="loadMessagesFromRoom(r.id)" [ngClass]="isCurrentRoom(r.id) ? 'active':''">
                 {{r.name}}
             </button>
         </div>

@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Message } from '../models/message';
 import { Room } from '../models/room';
+import { HttpClient } from '@angular/common/http';
+import { API_BASE_URL, MESSAGES_BY_ROOM_ROUTE } from 'src/globals';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomsService {
-  public messages!: Message[];
-  public room!: Room;
+  private messages: Message[];
+  private room!: Room;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.messages = [];
   }
 
@@ -31,5 +33,15 @@ export class RoomsService {
 
   getRoom(): Room{
     return this.room;
+  }
+
+  //Récupérer les messages d'une room en particulier
+  fetchMessagesByRoomId(roomID: number| null) {
+    if(roomID == null)
+      return;
+    this.http.get(`${API_BASE_URL}${MESSAGES_BY_ROOM_ROUTE}/${roomID}`).subscribe(res => {
+      let messages: Message[] = res as Message[];
+      this.setMessages(messages);
+    });
   }
 }
