@@ -14,15 +14,14 @@ export class ChatMessageComponent implements OnInit {
   public time!: string;
   avatarUrl!: string;
 
-  constructor(private session: SessionService, private router: Router) { }
+  constructor(private session: SessionService) { }
 
   ngOnInit(): void {
-    
     if(this.isUserConnected()){
       this.avatarUrl = this.session.getUserFromSession().avatarUrl;
       this.formatTimeStamp();
     }else{
-      this.router.navigate([LOGIN_ROUTE]);
+      this.avatarUrl = "";
     }    
   }
 
