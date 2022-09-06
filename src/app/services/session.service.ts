@@ -97,6 +97,15 @@ export class SessionService {
     return telephone;
   }
 
+  getEmail(){
+    let email:string | null;
+    email = localStorage.getItem('email');
+    if(email == null){
+      return "";
+    }
+    return email;
+  }
+
   getUserAvatarUrl(){
     return localStorage.getItem('avatarUrl');
   }
@@ -120,7 +129,7 @@ export class SessionService {
       this.getLogin(),
       this.getPassword(),
       this.getTelephone(),
-      
+      this.getEmail(),
       //"*****"
     );
     user.id = this.getUserId();

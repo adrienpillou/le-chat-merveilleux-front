@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit{
 
 modifProfil(){
   this.http.put('http://localhost:7777/user/' + this.user.id, this.user).subscribe({
-    next: (data) => { this.user = data; this.session.createUserSession(this.user) },
+    next: (data) => {  this.user = data; this.session.createUserSession(this.user) },
     error: (err) => { console.log(err) }
   });
   

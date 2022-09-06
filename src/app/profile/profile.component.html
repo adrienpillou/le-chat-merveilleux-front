@@ -2,59 +2,66 @@
 
   <h2 class="text-center" style="color:rgb(3, 3, 97);"><strong> Moification de profil</strong> </h2>
 
-
   <div class="text-center">
+
     <h3 class="titre2" style="color:rgb(3, 3, 97);">Profil de {{pseudo}}</h3>
+
     <br>
+
     <form #formProfil="ngForm" style="width: 50%; margin: auto;">
-      <div class="form-group">
-        <p style="color:rgb(3, 3, 97);">Score CHAT : </p>        
-      </div>
 
       <div class="form-group">
-        <p style="color:rgb(3, 3, 97);">Nombre d'AMIS : 00</p>
-      </div>
-      <br>
-      <br>
+
+        <p style="color:rgb(3, 3, 97);">Score CHAT : 00</p>        
+
+      </div><br>
+
     </form>
-    
-
 
       <div class="zone-modif">
+
         <div class="text-center">
+
           <p> Modifier votre pseudo </p>
+
           <mat-form-field>
-<<<<<<< HEAD
-            <input type="text" matInput class="form-control text-center" style="color:rgb(167, 167, 168);" name="pseudo"
-              [(ngModel)]="user.pseudo">
+
+            <input type="text" matInput class="form-control text-center" style="color:rgb(99, 99, 196);" name="pseudo" [(ngModel)]="user.pseudo">
 
           </mat-form-field>
-        </div>
 
-=======
-            <input type="text" matInput class="form-control text-center" style="color:rgb(167, 167, 168);" name="pseudo" [(ngModel)]="user.pseudo">
-          </mat-form-field><br>
-        </div>        
->>>>>>> 9d014e029e39f89de9f4376763dc4181870d491d
+        </div><br>        
+
         <div class="text-center">
+
           <p> Modifier votre téléphone </p>
-          <mat-form-field>
-            <input type="text" matInput class="form-control text-center" style="color:rgb(167, 167, 168);" name="telephone" [(ngModel)]="user.telephone">
-          </mat-form-field><br>
-        </div>
-        <div class="text-center">
-          <p> Modifier votre mot de passe </p>
-          <mat-form-field>
-            <input type="text" matInput class="form-control text-center" style="color:rgb(167, 167, 168);" name="password" [(ngModel)]="user.password">
-          </mat-form-field><br>
-          <br>
-          <br>
-        </div>
-      </div>
-      
-        <button class="btn btn-primary text-center" routerLink="/home">Accueil</button>
-        <button type="submit" [disabled]="!formProfil.form.valid" class="btn btn-primary text-center">Modifier votre profil</button>
 
-    
+          <mat-form-field>
+
+            <input type="text" matInput class="form-control text-center" style="color:rgb(99, 99, 196);" name="telephone" [(ngModel)]="user.telephone">
+
+          </mat-form-field>
+
+        </div><br>
+
+        <div class="text-center">
+
+          <p> Modifier votre mot de passe </p>
+
+          <mat-form-field>
+
+            <input type="text" matInput class="form-control text-center" style="color:rgb(99, 99, 196);" name="password" [(ngModel)]="user.password">
+
+          </mat-form-field><br>
+
+        </div><br>
+
+      </div>      
+
+        <button class="btn btn-primary text-center" routerLink="/home">Accueil</button>
+
+        <button type="submit" [disabled]="!formProfil.form.valid" class="btn btn-primary text-center">Valider la modification de profil</button>    
+
   </div>
+
 </div>
