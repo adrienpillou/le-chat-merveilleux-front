@@ -12,6 +12,7 @@ export class SessionService {
 
   constructor() { }
 
+  
   setPseudo(pseudo: string){
     localStorage.setItem('pseudo', pseudo);
   }
@@ -20,8 +21,18 @@ export class SessionService {
     localStorage.setItem('login', login);
   }
 
+  setPassword(password: string){
+    localStorage.setItem('password', password);
+  }
+
   setUserId(id: number){
     localStorage.setItem('userId', id.toString());
+  }
+  setUserEmail(email: string){
+    localStorage.setItem('email', email);
+  }
+  setUserTelephone(telephone: string){
+    localStorage.setItem('telephone', telephone);
   }
 
   getPseudo(){
@@ -42,8 +53,33 @@ export class SessionService {
     return login;
   }
 
+  getPassword(){
+    let password:string | null;
+    password = localStorage.getItem('password');
+    if(password == null){
+      return "";
+    }
+    return password;
+  }
+
   getUserId(){
     return parseInt(localStorage.getItem('userId') || "");
+  }
+  getEmail(){
+    let email:string | null;
+    email = localStorage.getItem('email');
+    if(email == null){
+      return "";
+    }
+    return email;
+  }
+  getTelephone(){
+    let telephone:string | null;
+    telephone = localStorage.getItem('telephone');
+    if(telephone == null){
+      return "";
+    }
+    return telephone;
   }
 
   deleteSession(){
@@ -63,7 +99,10 @@ export class SessionService {
       this.getUserId(),
       this.getPseudo(),
       this.getLogin(),
-      "*****"
+      this.getPassword(),
+      this.getEmail(),
+      this.getTelephone(),
+      //"*****"
     );
     return user;
   }
@@ -71,7 +110,10 @@ export class SessionService {
   createUserSession(user: User){
     this.setLogin(user.login);
     this.setPseudo(user.pseudo);
+    this.setPassword(user.password);
     this.setUserId(user.id);
+    this.setUserEmail(user.email);
+    this.setUserTelephone(user.telephone);
     console.warn(`Session créée pour ${user.login}`);
   }
 }

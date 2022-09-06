@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {MaterialModule} from './material/material.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
@@ -18,6 +18,7 @@ import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { WidgetsComponent } from './widgets/widgets.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { WidgetsComponent } from './widgets/widgets.component';
     CalcToolComponent,
     SnakeGameComponent,
     WidgetsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

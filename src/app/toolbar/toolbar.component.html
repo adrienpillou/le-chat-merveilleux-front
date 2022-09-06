@@ -6,6 +6,7 @@
         <button mat-button id="chat-button" routerLink="/chattin" *ngIf="isUserConnected()">Salons</button>
         <button mat-button id="chat-button" routerLink="/widgets" *ngIf="isUserConnected()" routerLink="/widgets">Widgets</button>
         <button mat-button id="connect-button" routerLink="/login" *ngIf="!isUserConnected()">Connexion</button>
+        <button mat-button id="profile-button" routerLink="/profile" *ngIf="isUserConnected()">Profile</button>
         <button mat-button color="warn" id="disconnect-button" (click)="disconnectUser()" *ngIf="isUserConnected()">Deconnexion</button>
         <!--<button mat-button id="sign-button" routerLink="/signin">S'inscrire</button>-->
     </div>
