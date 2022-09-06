@@ -36,9 +36,7 @@ export class SessionService {
   setAvatarUrl(url: string){
     localStorage.setItem('avatarUrl', url);
   }
-  setUserEmail(email: string){
-    localStorage.setItem('email', email);
-  }
+
   setUserTelephone(telephone: string){
     localStorage.setItem('telephone', telephone);
   }
@@ -89,14 +87,7 @@ export class SessionService {
   getUserId(){
     return parseInt(localStorage.getItem('userId') || "");
   }
-  getEmail(){
-    let email:string | null;
-    email = localStorage.getItem('email');
-    if(email == null){
-      return "";
-    }
-    return email;
-  }
+
   getTelephone(){
     let telephone:string | null;
     telephone = localStorage.getItem('telephone');
@@ -104,6 +95,15 @@ export class SessionService {
       return "";
     }
     return telephone;
+  }
+
+  getEmail(){
+    let email:string | null;
+    email = localStorage.getItem('email');
+    if(email == null){
+      return "";
+    }
+    return email;
   }
 
   getUserAvatarUrl(){
@@ -145,7 +145,6 @@ export class SessionService {
     this.setPassword(user.password);
     this.setUserId(user.id);
     this.setUserTelephone(user.telephone);
-    this.setUserEmail(user.email);
     this.setAvatarUrl(user.avatarUrl);
     localStorage.setItem("user", JSON.stringify(user));
     console.warn(`Session créée pour ${user.login}`);
