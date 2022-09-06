@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { LOGIN_ROUTE} from 'src/globals';
 import { Message } from '../models/message';
 import { SessionService } from '../services/session.service';
 
@@ -12,7 +14,7 @@ export class ChatMessageComponent implements OnInit {
   public time!: string;
   avatarUrl!: string;
 
-  constructor(private session: SessionService) { }
+  constructor(private session: SessionService, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -20,7 +22,7 @@ export class ChatMessageComponent implements OnInit {
       this.avatarUrl = this.session.getUserFromSession().avatarUrl;
       this.formatTimeStamp();
     }else{
-      this.avatarUrl = "";
+      this.router.navigate([LOGIN_ROUTE]);
     }    
   }
 
