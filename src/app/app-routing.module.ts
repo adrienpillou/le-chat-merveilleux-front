@@ -10,6 +10,7 @@ import { TetrisGameComponent } from './tetris-game/tetris-game.component';
 import { PacmanGameComponent } from './pacman-game/pacman-game.component';
 import { CalcToolComponent } from './calc-tool/calc-tool.component';
 import { ProfileComponent } from './profile/profile.component';
+import { GameMenuComponent } from './game-menu/game-menu.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -53,7 +54,12 @@ const routes: Routes = [
     path: "profile",
     component: ProfileComponent
   },
-
+  {
+    path: "game-menu",
+    component: GameMenuComponent
+  },
+    
+     
 
   // Ajouter la route de la page d'accueil
 ];

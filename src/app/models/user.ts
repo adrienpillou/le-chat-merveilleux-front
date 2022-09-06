@@ -8,7 +8,7 @@ export class User{
     telephone!: string ;
     email!: string ;
 
-    constructor(id: number | null, pseudo: string, login: string, password: string, telephone: string, email:string){
+    constructor(id: number | null, pseudo: string, login: string, password: string, telephone: string, email:string ){
         this.id = this.id;
         this.pseudo = pseudo;
         this.login = login;
