@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-declare function TetrisGame():any;
 
 @Component({
   selector: 'app-tetris-game',
@@ -11,7 +10,6 @@ export class TetrisGameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    TetrisGame();
   }
 
 }
