@@ -29,6 +29,10 @@ export class SessionService {
     } 
   }
 
+  setPassword(password: string){
+    localStorage.setItem('password', password);
+  }
+
   setAvatarUrl(url: string){
     localStorage.setItem('avatarUrl', url);
   }
@@ -108,8 +112,9 @@ export class SessionService {
       this.getPseudo(),
       this.getLogin(),
       this.getPassword(),
-      this.getEmail(),
       this.getTelephone(),
+      this.getEmail(),
+      
       //"*****"
     );
     user.avatarUrl = this.getUserAvatarUrl() as string;
@@ -121,8 +126,8 @@ export class SessionService {
     this.setPseudo(user.pseudo);
     this.setPassword(user.password);
     this.setUserId(user.id);
-    this.setUserEmail(user.email);
     this.setUserTelephone(user.telephone);
+    this.setUserEmail(user.email);
     this.setAvatarUrl(user.avatarUrl);
     console.warn(`Session créée pour ${user.login}`);
   }
