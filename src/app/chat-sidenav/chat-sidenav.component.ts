@@ -18,10 +18,10 @@ export class ChatSidenavComponent implements OnInit {
   constructor(private http: HttpClient,
               private session: SessionService,
               private roomsService: RoomsService
-    ) { }
+  ){}
 
   ngOnInit(): void {
-    this.hide();
+    this.show();
     this.addSideNavEvents();
     this.getRooms();
 

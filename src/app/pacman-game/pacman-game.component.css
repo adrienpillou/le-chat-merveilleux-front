@@ -8,6 +8,7 @@ body {
     width: 382px;
     border-radius: 5px;
     margin: 20px auto;
+
 }
 
 #shim {
@@ -31,4 +32,7 @@ body {
 p {
     text-decoration: none;
     color: #0000FF;
+}
+canvas{
+    box-shadow: 2px 2px 5px black;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Init } from 'src/assets/games/pacman';
 
 @Component({
   selector: 'app-pacman-game',
@@ -12,4 +13,7 @@ export class PacmanGameComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(){
+    Init();
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare function Init():any;
+import { Init } from 'src/assets/games/snake';
 
 @Component({
   selector: 'app-snake-game',
@@ -11,6 +11,10 @@ export class SnakeGameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+
+  ngAfterViewInit(){
     Init();
   }
 
