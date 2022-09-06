@@ -21,6 +21,9 @@ export class ChatBoxComponent implements OnInit {
               private session: SessionService) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.messages = this.roomsService.getMessages();
+    }, 1000);
   }
 
   ngAfterView(){

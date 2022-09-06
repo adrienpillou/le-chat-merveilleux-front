@@ -1,11 +1,10 @@
 .sidenav{
     height: 80%;
     background-color: #424242;
-    margin-left: 2%;
-    margin-top: 6%;
     left: 0;
     top:0;
-    width: 18%;
+    width: 300px;
+    height: 100%;
     position: fixed;
     text-align: center;
     color: white;
@@ -22,7 +21,6 @@
 
 .visible{
     min-width: 200px;
-    left :0%;
     transition-property: left;
     transition-duration: .15s;
 }
