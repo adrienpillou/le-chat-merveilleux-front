@@ -16,7 +16,6 @@ export class SigninFormComponent implements OnInit {
   password!: string;
   confirmPassword!: string;
   telephone!:string;
-  email!:string;
   public message!: string;
 
 
@@ -44,9 +43,7 @@ export class SigninFormComponent implements OnInit {
     if(this.telephone == "" || this.telephone == undefined){
       this.message += "\nTelephone manquant";
     }
-    if(this.email == "" || this.email == undefined){
-      this.message += "\nEmail manquant";
-    }
+
 
     if(this.confirmPassword != this.password){
       this.message += "\nLes mots de passe ne correspondent pas.";
@@ -59,7 +56,7 @@ export class SigninFormComponent implements OnInit {
     }
       
     let userObject!: Object;
-    let user: User = new User(null, this.pseudo, this.login, this.password, this.telephone, this.email);
+    let user: User = new User(null, this.pseudo, this.login, this.password, this.telephone);
     user.pickAvatar();
 
     userObject = {
@@ -68,7 +65,6 @@ export class SigninFormComponent implements OnInit {
       login: user.login,
       password: user.password,
       telephone: user.telephone,
-      email: user.email
     }
 
     this.http.post("http://localhost:7777/signin", userObject).subscribe( res => {
