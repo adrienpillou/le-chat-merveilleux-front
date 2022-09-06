@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Message } from '../models/message';
 import { API_BASE_URL, CHATTING_ROUTE } from 'src/globals';
 import { WidgetsComponent } from '../widgets/widgets.component';
+import { RoomsService } from '../services/rooms.service';
+import { SessionService } from '../services/session.service';
+import { ChatSidenavComponent } from '../chat-sidenav/chat-sidenav.component';
 
 @Component({
   selector: 'app-chat-box',
@@ -13,21 +16,24 @@ import { WidgetsComponent } from '../widgets/widgets.component';
 export class ChatBoxComponent implements OnInit {
   messages!: Message[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              public roomsService: RoomsService,
+              private session: SessionService) { }
 
   ngOnInit(): void {
-    this.getMessages(API_BASE_URL + CHATTING_ROUTE);
   }
 
-  getMessages(url:string){
-    this.http.get(url).subscribe(data => {
-      this.messages = data as Message[];
-    });
+  getMessages(){
+    this.messages = this.roomsService.getMessages();
   }
 
-  ngAfterViewChecked() {        
-    this.scrollToBottom();        
-  } 
+  ngAfterView(){
+  }
+
+  ngAfterViewInit() { 
+    this.scrollToBottom();
+    this.messages = this.roomsService.getMessages();
+  }
 
   //Descendre le slider en bas de la boite de chat
   scrollToBottom(){

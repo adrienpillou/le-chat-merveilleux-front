@@ -32,12 +32,20 @@ export class SessionService {
     localStorage.setItem('avatarUrl', url);
   }
 
-  setCurrentRoom(roomName: string){
-    localStorage.setItem("currentRoom", roomName);
+  setCurrentRoom(roomIndex: number){
+    localStorage.setItem("currentRoom", roomIndex.toString());
   }
 
-  getCurrentRoom(): string{
-    return localStorage.getItem("currentRoom") as string;
+  getCurrentRoom(): number{
+    let roomIndexStr = localStorage.getItem("currentRoom");
+    let roomIndex: number;
+    if(roomIndexStr == null || roomIndexStr == ""){
+      this.setCurrentRoom(1);
+      roomIndex = 1;
+    }else{
+      roomIndex = parseInt(roomIndexStr);
+    }
+    return roomIndex;
   }
 
   getPseudo(){

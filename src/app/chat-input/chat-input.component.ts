@@ -43,7 +43,9 @@ export class ChatInputComponent implements OnInit {
     user = this.session.getUserFromSession();
 
     // Préparer la room
-    room = new Room("1", null);
+    let roomIndex:number = this.session.getCurrentRoom();
+
+    room = new Room(roomIndex, null);
 
     // Préparer le message
     messageToSend = new Message(user, this.fieldValue, room);

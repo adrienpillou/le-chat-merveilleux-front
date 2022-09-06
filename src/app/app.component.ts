@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { HOME_ROUTE } from 'src/globals';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'chat';
+  constructor(private router: Router){
+    //router.navigate([HOME_ROUTE]);
+  }
 }
