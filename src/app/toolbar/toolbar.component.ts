@@ -22,7 +22,6 @@ export class ToolbarComponent implements OnInit {
     if(this.isUserConnected()){
       this.pseudo = this.session.getUserFromSession().pseudo;
       this.avatarUrl = this.session.getUserFromSession().avatarUrl;
-      console.warn(this.pseudo, this.avatarUrl);
     }else{
       this.pseudo = "";
       this.avatarUrl = "";
