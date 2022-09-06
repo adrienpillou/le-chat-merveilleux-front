@@ -22,6 +22,7 @@ import { MeteoComponent } from './meteo/meteo.component';
 import { TetrisGameComponent } from './tetris-game/tetris-game.component';
 import { PacmanGameComponent } from './pacman-game/pacman-game.component'; 
 import { ProfileComponent } from './profile/profile.component';
+import { GameMenuComponent } from './game-menu/game-menu.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ProfileComponent } from './profile/profile.component';
     MeteoComponent,
     TetrisGameComponent,
     PacmanGameComponent,
-    ProfileComponent
+    ProfileComponent,
+    GameMenuComponent
   ],
   imports: [
     BrowserModule,
