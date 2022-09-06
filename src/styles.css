@@ -1,23 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; background-color: #303030;}
+html, body {height: auto; 
+        background-color: lightslategray;
+     
+        /* Webkit */
+        background-image:
+            -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 40, from(white), color-stop(0.1, rgba(248,255,128,.5)), to(transparent)),
+            -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 30, from(white), color-stop(0.1, rgba(255,186,170,.4)), to(transparent)),
+            -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 40, from(rgba(255,255,255,.9)), color-stop(0.05, rgba(251,255,186,.3)), to(transparent)),
+            -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 30, from(rgba(255,255,255,.4)), color-stop(0.03, rgba(253,255,219,.2)), to(transparent));
+     
+        /* Background Attributes */
+        background-size: 550px 550px, 350px 350px, 250px 270px, 220px 200px;
+        background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+     
+        /* Animation */
+        animation-name: movement;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+     
+        /* Webkit */
+        -webkit-animation-name: movement;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+       @keyframes movement{
+           from {
+                   background-position: 0 0, 30px 60px, 130px 270px, 70px 150px;
+           }    to {
+                   background-position: -550px 0, -320px 60px, -120px 270px, -150px 150px;
+           }
+       }
+       
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .message-card{
     margin-top: 16px;
 }
 
-.form-container{
+.form-container{ 
     display: flex;
     flex-direction: column;
     /*border: 1px dashed greenyellow;*/
     width: 600px;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 8%;
+    margin-bottom: 8%;
     padding: 16px 0px;
     border-radius: 5px;
-    background-color: #212121;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.571);
+    background-color: rgba(173,216,230, 0.7);
+    box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.571);
+    
 }
 
 .form-container h1{
@@ -28,4 +64,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .form-container mat-form-field{
     color: white;
+}
+
+.message{
+    margin-top: 32px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.error{
+    color: red;
 }

@@ -9,9 +9,11 @@ import { HOME_ROUTE } from 'src/globals';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
+
 export class ToolbarComponent implements OnInit {
 
   pseudo!: string;
+  avatarUrl!: string;
   title: string = APP_TITLE;
 
   constructor(public session: SessionService, private router: Router) { }
@@ -19,8 +21,11 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
     if(this.isUserConnected()){
       this.pseudo = this.session.getUserFromSession().pseudo;
+      this.avatarUrl = this.session.getUserFromSession().avatarUrl;
+      console.warn(this.pseudo, this.avatarUrl);
     }else{
       this.pseudo = "";
+      this.avatarUrl = "";
     }
   }
 

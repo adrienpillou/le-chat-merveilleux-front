@@ -19,9 +19,9 @@ ul{
     background-color: #1D61EE;
 }
 
-#disconnect-button{
-}
-
-#pseudo-pill{
-    color: rgb(83, 82, 82);
+#avatar-icon-button{
+    background-color: rgb(222, 222, 222);
+    margin-left: 16px;
+    width: 60px;
+    height: 60px;
 }

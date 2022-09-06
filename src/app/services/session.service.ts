@@ -21,12 +21,16 @@ export class SessionService {
     localStorage.setItem('login', login);
   }
 
-  setPassword(password: string){
-    localStorage.setItem('password', password);
+  setUserId(id: number | null){
+    if(id == null){
+      localStorage.setItem('userId', "");
+    }else{
+      localStorage.setItem('userId', id.toString());
+    } 
   }
 
-  setUserId(id: number){
-    localStorage.setItem('userId', id.toString());
+  setAvatarUrl(url: string){
+    localStorage.setItem('avatarUrl', url);
   }
   setUserEmail(email: string){
     localStorage.setItem('email', email);
@@ -82,6 +86,10 @@ export class SessionService {
     return telephone;
   }
 
+  getUserAvatarUrl(){
+    return localStorage.getItem('avatarUrl');
+  }
+
   deleteSession(){
     localStorage.clear();
     console.warn(`Session effacée`);
@@ -104,6 +112,7 @@ export class SessionService {
       this.getTelephone(),
       //"*****"
     );
+    user.avatarUrl = this.getUserAvatarUrl() as string;
     return user;
   }
 
@@ -114,6 +123,7 @@ export class SessionService {
     this.setUserId(user.id);
     this.setUserEmail(user.email);
     this.setUserTelephone(user.telephone);
+    this.setAvatarUrl(user.avatarUrl);
     console.warn(`Session créée pour ${user.login}`);
   }
 }

@@ -4,5 +4,7 @@ export const LOGIN_ROUTE = "/login";
 export const SIGNIN_ROUTE = "/signin";
 export const HOME_ROUTE = "/home";
 export const CHATTING_ROUTE = "/chattin";
+export const ROOMS_ROUTE = "/rooms"
+export const MESSAGES_BY_ROOM_ROUTE= "/message/rooms"
 export const PROFIL_ROUTE = "/profile";
 export const SESSION_KEY = "session";

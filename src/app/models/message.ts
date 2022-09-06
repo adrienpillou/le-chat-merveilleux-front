@@ -7,8 +7,7 @@ export class Message {
     public contenu!: string;
     public room!: Room
 
-    constructor(date: string, user: User, contenu: string, room: Room){
-        this.date = date;
+    constructor(user: User, contenu: string, room: Room){
         this.user = user;
         this.contenu = contenu;
         this.room = room;

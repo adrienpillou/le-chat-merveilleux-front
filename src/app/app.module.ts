@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import {MaterialModule} from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SigninFormComponent } from './signin-form/signin-form.component';
@@ -18,6 +18,10 @@ import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { WidgetsComponent } from './widgets/widgets.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MeteoComponent } from './meteo/meteo.component';
+import { TetrisGameComponent } from './tetris-game/tetris-game.component';
+import { PacmanGameComponent } from './pacman-game/pacman-game.component'; 
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -35,6 +39,9 @@ import { ProfileComponent } from './profile/profile.component';
     CalcToolComponent,
     SnakeGameComponent,
     WidgetsComponent,
+    MeteoComponent,
+    TetrisGameComponent,
+    PacmanGameComponent
     ProfileComponent
   ],
   imports: [
@@ -43,7 +50,8 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
