@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Init } from 'src/assets/games/tetris';
 
 @Component({
   selector: 'app-tetris-game',
@@ -10,6 +11,10 @@ export class TetrisGameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
+    Init();
   }
 
 }

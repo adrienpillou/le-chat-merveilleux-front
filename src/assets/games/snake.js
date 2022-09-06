@@ -25,7 +25,7 @@ x: 320,
 y: 320
 };
 
-function Init(){
+export function Init(){
     canvas = document.getElementById('game');
     context = canvas.getContext('2d');
     // start the game

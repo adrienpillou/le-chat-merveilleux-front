@@ -130,11 +130,11 @@ function getRandomInt(min, max) {
   let canvas;
   let context;
 
-  document.addEventListener("DOMContentLoaded", ()=>{
+  export function Init(){
 	canvas = document.getElementById('game');
   	context = canvas.getContext('2d');
 	rAF = requestAnimationFrame(loop);
-  });
+  }
   
   const grid = 32;
   const tetrominoSequence = [];
