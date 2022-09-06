@@ -14,20 +14,18 @@ import { User } from '../models/user';
 })
 export class ProfileComponent implements OnInit{
 
-  public user!:any;
-  public avatarUrl!:string;
+  public user!: User;
+  public editedUser!: User;
+  public avatarUrl!: string;
   //pseudo!: string;
   //id!: any;
 
   constructor(private http: HttpClient,public session: SessionService, private router: Router) { }
 
-
-  
   ngOnInit() {
-
     if(this.isUserConnected()){
       this.user = this.session.getUserFromSession();
-      this.avatarUrl = this.user.avatarUrl;
+      this.editedUser = this.user;
       console.log(this.user);
     }else{
 
@@ -51,8 +49,11 @@ export class ProfileComponent implements OnInit{
   }
 
   modifProfil(){
-    this.http.put('http://localhost:7777/user/' + this.user.id, this.user).subscribe({
-      next: (data) => {  this.user = data; this.session.createUserSession(this.user) },
+    this.http.put('http://localhost:7777/users/update', this.editedUser).subscribe({
+      next: (data) => {
+        this.user = data as User;
+        this.session.createUserSession(this.user);
+      },
       error: (err) => { console.log(err) }
     });
   }
@@ -70,11 +71,10 @@ export class ProfileComponent implements OnInit{
   }
 
   getAvatarUrl(){
-    return this.avatarUrl;
+    return this.editedUser.avatarUrl;
   }
 
   changeAvatar(){
-    this.avatarUrl = this.user.pickAvatar();
-    console.log(this.avatarUrl);
+    this.editedUser.avatarUrl = this.editedUser.pickAvatar();
   }
 }

@@ -14,7 +14,6 @@ import { GameMenuComponent } from './game-menu/game-menu.component';
 import { MeteoComponent } from './meteo/meteo.component';
 import { ActuComponent } from './actu/actu.component';
 import { AppComponent } from './app.component';
-import { MeteoComponent } from './meteo/meteo.component';
 
 const routes: Routes = [
   {
