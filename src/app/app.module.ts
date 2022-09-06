@@ -23,6 +23,7 @@ import { TetrisGameComponent } from './tetris-game/tetris-game.component';
 import { PacmanGameComponent } from './pacman-game/pacman-game.component'; 
 import { ProfileComponent } from './profile/profile.component';
 import { GameMenuComponent } from './game-menu/game-menu.component';
+import { ActuComponent } from './actu/actu.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { GameMenuComponent } from './game-menu/game-menu.component';
     TetrisGameComponent,
     PacmanGameComponent,
     ProfileComponent,
-    GameMenuComponent
+    GameMenuComponent,
+    ActuComponent
   ],
   imports: [
     BrowserModule,
