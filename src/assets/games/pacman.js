@@ -21,7 +21,7 @@ var NONE        = 4,
     DYING       = 10,
     Pacman      = {};
 
-Pacman.FPS = 60;
+Pacman.FPS = 30;
 
 Pacman.Ghost = function (game, map, colour) {
 
