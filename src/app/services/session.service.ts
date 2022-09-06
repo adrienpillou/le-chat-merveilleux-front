@@ -12,6 +12,7 @@ export class SessionService {
 
   constructor() { }
 
+  
   setPseudo(pseudo: string){
     localStorage.setItem('pseudo', pseudo);
   }
@@ -28,8 +29,18 @@ export class SessionService {
     } 
   }
 
+  setPassword(password: string){
+    localStorage.setItem('password', password);
+  }
+
   setAvatarUrl(url: string){
     localStorage.setItem('avatarUrl', url);
+  }
+  setUserEmail(email: string){
+    localStorage.setItem('email', email);
+  }
+  setUserTelephone(telephone: string){
+    localStorage.setItem('telephone', telephone);
   }
 
   getPseudo(){
@@ -50,8 +61,33 @@ export class SessionService {
     return login;
   }
 
+  getPassword(){
+    let password:string | null;
+    password = localStorage.getItem('password');
+    if(password == null){
+      return "";
+    }
+    return password;
+  }
+
   getUserId(){
     return parseInt(localStorage.getItem('userId') || "");
+  }
+  getEmail(){
+    let email:string | null;
+    email = localStorage.getItem('email');
+    if(email == null){
+      return "";
+    }
+    return email;
+  }
+  getTelephone(){
+    let telephone:string | null;
+    telephone = localStorage.getItem('telephone');
+    if(telephone == null){
+      return "";
+    }
+    return telephone;
   }
 
   getUserAvatarUrl(){
@@ -75,7 +111,11 @@ export class SessionService {
       this.getUserId(),
       this.getPseudo(),
       this.getLogin(),
-      ""
+      this.getPassword(),
+      this.getTelephone(),
+      this.getEmail(),
+      
+      //"*****"
     );
     user.avatarUrl = this.getUserAvatarUrl() as string;
     return user;
@@ -84,7 +124,10 @@ export class SessionService {
   createUserSession(user: User){
     this.setLogin(user.login);
     this.setPseudo(user.pseudo);
+    this.setPassword(user.password);
     this.setUserId(user.id);
+    this.setUserTelephone(user.telephone);
+    this.setUserEmail(user.email);
     this.setAvatarUrl(user.avatarUrl);
     console.warn(`Session créée pour ${user.login}`);
   }
