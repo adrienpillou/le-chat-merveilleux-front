@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit{
       this.id = "";
     }*/
   }
-
+  
   isUserConnected(): boolean{
     return this.session.isUserConnected();
   }
@@ -52,7 +52,8 @@ export class ProfileComponent implements OnInit{
     this.http.put('http://localhost:7777/users/update', this.editedUser).subscribe({
       next: (data) => {
         this.user = data as User;
-        this.session.createUserSession(this.user);
+        this.session.createUserSession(this.editedUser);
+        location.reload();
       },
       error: (err) => { console.log(err) }
     });
